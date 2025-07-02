@@ -1,0 +1,8 @@
+/* styles.css */
+.filter-btn.active {
+  @apply bg-sky-500 text-white; /* This uses Tailwind's syntax */
+}
+
+.filter-btn {
+  @apply bg-white text-slate-700;
+}
