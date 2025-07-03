@@ -1,100 +1,213 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Add 'dark' class here if you want dark mode to be the default -->
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jane Doe - Freelance Developer</title>
-    <!-- Link to Tailwind CSS -->
+    <!-- Link to Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Your custom styles (optional) -->
+    <!-- Configuration for Tailwind to enable dark mode -->
+    <script>
+      tailwind.config = {
+        darkMode: "class", // This line enables class-based dark mode
+      };
+    </script>
+    <!-- Link to your custom styles -->
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="bg-slate-100 text-slate-800">
-    <!-- Inside your <body> tag -->
+  <body
+    class="bg-slate-100 text-slate-800 dark:bg-slate-900 dark:text-slate-200 transition-colors duration-300"
+  >
+    <!-- ===== Navigation Bar ===== -->
+    <nav
+      class="bg-white/80 dark:bg-slate-800/80 shadow-md sticky top-0 z-50 backdrop-blur-sm"
+    >
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <!-- Brand/Logo -->
+        <a href="#" class="text-2xl font-bold text-sky-500">JD</a>
+
+        <!-- Desktop Menu & Theme Toggle -->
+        <div class="hidden md:flex items-center space-x-6">
+          <a
+            href="#home"
+            class="nav-link text-slate-600 dark:text-slate-300 hover:text-sky-500"
+            >Home</a
+          >
+          <a
+            href="#portfolio"
+            class="nav-link text-slate-600 dark:text-slate-300 hover:text-sky-500"
+            >My Work</a
+          >
+          <a
+            href="#contact"
+            class="nav-link text-slate-600 dark:text-slate-300 hover:text-sky-500"
+            >Contact</a
+          >
+          <!-- Dark Mode Toggle Button -->
+          <button
+            id="theme-toggle-btn"
+            class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700"
+          >
+            <svg
+              id="theme-icon-light"
+              class="h-5 w-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+            <svg
+              id="theme-icon-dark"
+              class="h-5 w-5 hidden"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05a1 1 0 010 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 0zM3 11a1 1 0 100-2H2a1 1 0 100 2h1z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Hamburger Button (Mobile) -->
+        <button id="hamburger-btn" class="md:hidden focus:outline-none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu (includes theme toggle) -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden px-6 pt-2 pb-4 space-y-2 bg-white dark:bg-slate-800"
+      >
+        <a
+          href="#home"
+          class="nav-link block text-slate-600 dark:text-slate-300 hover:text-sky-500"
+          >Home</a
+        >
+        <a
+          href="#portfolio"
+          class="nav-link block text-slate-600 dark:text-slate-300 hover:text-sky-500"
+          >My Work</a
+        >
+        <a
+          href="#contact"
+          class="nav-link block text-slate-600 dark:text-slate-300 hover:text-sky-500"
+          >Contact</a
+        >
+        <!-- Mobile Theme Toggle -->
+        <button
+          id="theme-toggle-btn-mobile"
+          class="w-full text-left p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-700"
+        >
+          Toggle Theme
+        </button>
+      </div>
+    </nav>
+
     <main class="container mx-auto p-8">
-      <!-- HERO SECTION (Your Name & Title) -->
-      <section class="text-center my-12">
-        <h1 class="text-4xl md:text-6xl font-bold">Desta Shoa</h1>
-        <p class="text-xl text-slate-600 mt-2">Creative Web Developer</p>
+      <!-- ===== Hero Section ===== -->
+      <section id="home" class="text-center my-16">
+        <h1 class="text-4xl md:text-6xl font-bold">Jane Doe</h1>
+        <!-- The typing effect will target this element -->
+        <p
+          id="typing-text"
+          class="text-xl text-slate-600 dark:text-slate-400 mt-2 h-7"
+        ></p>
       </section>
 
-      <!-- PORTFOLIO SECTION (This is the important part!) -->
-      <section id="portfolio" class="my-12">
+      <!-- ===== Portfolio Section ===== -->
+      <section id="portfolio" class="my-16">
         <h2 class="text-3xl font-bold text-center mb-8">My Work</h2>
 
         <!-- Filter Buttons -->
-        <div id="filter-buttons" class="flex justify-center space-x-4 mb-8">
-          <button
-            data-filter="all"
-            class="filter-btn bg-sky-500 text-white px-4 py-2 rounded"
-          >
-            All
-          </button>
-          <button
-            data-filter="web"
-            class="filter-btn bg-white px-4 py-2 rounded"
-          >
-            Web Design
-          </button>
-          <button
-            data-filter="Development"
-            class="filter-btn bg-white px-4 py-2 rounded"
-          >
-            Web Development
-          </button>
-          <button
-            data-filter="logo"
-            class="filter-btn bg-white px-4 py-2 rounded"
-          >
-            Logos
-          </button>
+        <div
+          id="filter-buttons"
+          class="flex justify-center flex-wrap gap-4 mb-8"
+        >
+          <!-- Buttons are still here, but can also be generated from JS if you want! -->
         </div>
 
-        <!-- Portfolio Grid -->
+        <!-- Portfolio Grid (NOW EMPTY - JAVASCRIPT WILL FILL THIS) -->
         <div
           id="portfolio-grid"
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          <!-- Project 1 (Web) -->
-          <div class="portfolio-item" data-category="web">
-            <img
-              src="assets/download.webp"
-              alt="Web Project"
-              class="rounded shadow-lg"
-            />
-          </div>
-          <!-- Project 2 (Logo) -->
-          <div class="portfolio-item" data-category="logo">
-            <img
-              src="assets/download (1).webp"
-              alt="Logo Design"
-              class="rounded shadow-lg"
-            />
-          </div>
-          <!-- Project 2 (Logo) -->
-          <div class="portfolio-item" data-category="Development">
-            <img
-              src="assets/download (3).webp"
-              alt="web development"
-              class="rounded shadow-lg"
-            />
-          </div>
-          <!-- Project 3 (Web) -->
-          <div class="portfolio-item" data-category="web">
-            <img
-              src="assets/download (2).webp"
-              alt="Web App"
-              class="rounded shadow-lg"
-            />
-          </div>
-          <!-- Add more projects with different data-category attributes -->
+          <!-- Portfolio items will be inserted here by app.js -->
         </div>
+      </section>
+
+      <!-- ===== Contact Section ===== -->
+      <section id="contact" class="my-16 text-center">
+        <h2 class="text-3xl font-bold text-center mb-4">Get In Touch</h2>
+        <p>I'm currently available for freelance work.</p>
+        <a
+          href="mailto:hello@janedoe.com"
+          class="mt-4 inline-block bg-sky-500 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-sky-600"
+          >Email Me</a
+        >
       </section>
     </main>
 
-    <!-- Your content will go here -->
+    <!-- ===== Scroll to Top Button ===== -->
+    <button
+      id="scroll-to-top-btn"
+      class="hidden fixed bottom-5 right-5 bg-sky-500 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-sky-600 focus:outline-none z-50"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 15l7-7 7 7"
+        />
+      </svg>
+    </button>
 
-    <!-- Link to your JavaScript file at the end of the body -->
+    <!-- ===== Image Lightbox/Modal ===== -->
+    <div
+      id="lightbox"
+      class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+    >
+      <button
+        id="lightbox-close"
+        class="absolute top-4 right-4 text-white text-3xl"
+      >
+        ×
+      </button>
+      <img
+        id="lightbox-img"
+        src=""
+        alt="Enlarged view"
+        class="max-w-full max-h-full rounded-lg"
+      />
+    </div>
+
+    <!-- Link to your JavaScript file -->
     <script src="app.js"></script>
   </body>
 </html>

@@ -1,8 +1,39 @@
-/* styles.css */
-.filter-btn.active {
-  @apply bg-sky-500 text-white; /* This uses Tailwind's syntax */
+/* Custom styles that complement Tailwind */
+
+/* Style for the default state of filter buttons */
+.filter-btn {
+  background-color: #ffffff;
+  color: #475569;
+  transition: all 0.2s ease-in-out;
+}
+.dark .filter-btn {
+  background-color: #334155; /* slate-700 */
+  color: #cbd5e1; /* slate-300 */
 }
 
-.filter-btn {
-  @apply bg-white text-slate-700;
+/* Style for the currently active filter button */
+.filter-btn.active {
+  background-color: #0ea5e9; /* sky-500 */
+  color: #ffffff;
+  font-weight: 600;
+}
+.dark .filter-btn.active {
+  background-color: #0ea5e9;
+  color: #ffffff;
+}
+
+/* Blinking cursor for the typing effect */
+#typing-text::after {
+  content: "|";
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: #0ea5e9;
+  } /* sky-500 */
 }
