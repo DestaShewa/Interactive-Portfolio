@@ -1,19 +1,13 @@
 <!DOCTYPE html>
-<!-- Add 'dark' class here if you want dark mode to be the default -->
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jane Doe - Freelance Developer</title>
-    <!-- Link to Tailwind CSS via CDN -->
+    <title>Desta Shewa - Freelance Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configuration for Tailwind to enable dark mode -->
     <script>
-      tailwind.config = {
-        darkMode: "class", // This line enables class-based dark mode
-      };
+      tailwind.config = { darkMode: "class" };
     </script>
-    <!-- Link to your custom styles -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body
@@ -26,27 +20,15 @@
       <div
         class="container mx-auto px-6 py-4 flex justify-between items-center"
       >
-        <!-- Brand/Logo -->
-        <a href="#" class="text-2xl font-bold text-sky-500">JD</a>
-
-        <!-- Desktop Menu & Theme Toggle -->
+        <a
+          href="#"
+          class="bg-sky-500 text-white px-4 py-2 rounded-3xl font-semibold shadow-md hover:bg-sky-600"
+          >DT-S</a
+        >
         <div class="hidden md:flex items-center space-x-6">
-          <a
-            href="#home"
-            class="nav-link text-slate-600 dark:text-slate-300 hover:text-sky-500"
-            >Home</a
-          >
-          <a
-            href="#portfolio"
-            class="nav-link text-slate-600 dark:text-slate-300 hover:text-sky-500"
-            >My Work</a
-          >
-          <a
-            href="#contact"
-            class="nav-link text-slate-600 dark:text-slate-300 hover:text-sky-500"
-            >Contact</a
-          >
-          <!-- Dark Mode Toggle Button -->
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#portfolio" class="nav-link">My Work</a>
+          <a href="#contact" class="nav-link">Contact</a>
           <button
             id="theme-toggle-btn"
             class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700"
@@ -73,8 +55,6 @@
             </svg>
           </button>
         </div>
-
-        <!-- Hamburger Button (Mobile) -->
         <button id="hamburger-btn" class="md:hidden focus:outline-none">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -92,28 +72,13 @@
           </svg>
         </button>
       </div>
-
-      <!-- Mobile Menu (includes theme toggle) -->
       <div
         id="mobile-menu"
         class="hidden md:hidden px-6 pt-2 pb-4 space-y-2 bg-white dark:bg-slate-800"
       >
-        <a
-          href="#home"
-          class="nav-link block text-slate-600 dark:text-slate-300 hover:text-sky-500"
-          >Home</a
-        >
-        <a
-          href="#portfolio"
-          class="nav-link block text-slate-600 dark:text-slate-300 hover:text-sky-500"
-          >My Work</a
-        >
-        <a
-          href="#contact"
-          class="nav-link block text-slate-600 dark:text-slate-300 hover:text-sky-500"
-          >Contact</a
-        >
-        <!-- Mobile Theme Toggle -->
+        <a href="#home" class="nav-link block">Home</a>
+        <a href="#portfolio" class="nav-link block">My Work</a>
+        <a href="#contact" class="nav-link block">Contact</a>
         <button
           id="theme-toggle-btn-mobile"
           class="w-full text-left p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-700"
@@ -124,50 +89,211 @@
     </nav>
 
     <main class="container mx-auto p-8">
-      <!-- ===== Hero Section ===== -->
       <section id="home" class="text-center my-16">
-        <h1 class="text-4xl md:text-6xl font-bold">Jane Doe</h1>
-        <!-- The typing effect will target this element -->
+        <h1 class="text-4xl md:text-6xl font-bold">Hello, I'm Desta Shewa</h1>
         <p
           id="typing-text"
           class="text-xl text-slate-600 dark:text-slate-400 mt-2 h-7"
         ></p>
       </section>
 
-      <!-- ===== Portfolio Section ===== -->
       <section id="portfolio" class="my-16">
         <h2 class="text-3xl font-bold text-center mb-8">My Work</h2>
 
-        <!-- Filter Buttons -->
+        <!-- Filter Buttons: Hard-coded in HTML -->
         <div
           id="filter-buttons"
           class="flex justify-center flex-wrap gap-4 mb-8"
         >
-          <!-- Buttons are still here, but can also be generated from JS if you want! -->
+          <button
+            data-filter="all"
+            class="filter-btn active px-4 py-2 rounded-md"
+          >
+            All
+          </button>
+          <button data-filter="web" class="filter-btn px-4 py-2 rounded-md">
+            Web
+          </button>
+          <button data-filter="app" class="filter-btn px-4 py-2 rounded-md">
+            App
+          </button>
+          <button data-filter="logo" class="filter-btn px-4 py-2 rounded-md">
+            Logo
+          </button>
         </div>
 
-        <!-- Portfolio Grid (NOW EMPTY - JAVASCRIPT WILL FILL THIS) -->
+        <!-- Portfolio Grid: Add your project items here! -->
         <div
           id="portfolio-grid"
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          <!-- Portfolio items will be inserted here by app.js -->
+          <!-- Project 1 -->
+          <div class="portfolio-item cursor-pointer group" data-category="web">
+            <img
+              src="assets/web1.jpg"
+              alt="Web Project 1"
+              class="h-80 rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <!-- Project 1 -->
+          <div class="portfolio-item cursor-pointer group" data-category="web">
+            <img
+              src="assets/web2.jpg"
+              alt="Web Project 2"
+              class="h-80 rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <!-- Project 1 -->
+          <div class="portfolio-item cursor-pointer group" data-category="web">
+            <img
+              src="assets/web3.avif"
+              alt="Web Project 3"
+              class="h-80 rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <!-- Project 1 -->
+          <div class="portfolio-item cursor-pointer group" data-category="web">
+            <img
+              src="assets/web4.avif"
+              alt="Web Project 4"
+              class="h-80 rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <!-- Project 1 -->
+          <div class="portfolio-item cursor-pointer group" data-category="web">
+            <img
+              src="assets/w8.webp"
+              alt="Web Project 5"
+              class="h-80 rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <!-- Project 1 -->
+          <div class="portfolio-item cursor-pointer group" data-category="web">
+            <img
+              src="assets/wep7.webp"
+              alt="Web Project 6"
+              class="h-80 rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+
+          <!-- Project 2 -->
+          <div class="portfolio-item cursor-pointer group" data-category="logo">
+            <img
+              src="assets/logo_ax.avif"
+              alt="Logo Project 1"
+              class="h-120 w-auto rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <!-- Project 2 -->
+          <div class="portfolio-item cursor-pointer group" data-category="logo">
+            <img
+              src="assets/logo_cr.avif"
+              alt="Logo Project 2"
+              class="min-h-120 rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <!-- Project 2 -->
+          <div class="portfolio-item cursor-pointer group" data-category="logo">
+            <img
+              src="assets/logo_flw.avif"
+              alt="Logo Project 3"
+              class="h-120 w-auto rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <!-- Project 2 -->
+          <div class="portfolio-item cursor-pointer group" data-category="logo">
+            <img
+              src="assets/logo1.avif"
+              alt="Logo Project 4"
+              class="rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <!-- Project 2 -->
+          <div class="portfolio-item cursor-pointer group" data-category="logo">
+            <img
+              src="assets/logoll.avif"
+              alt="Logo Project 5"
+              class="rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <!-- Project 2 -->
+          <div class="portfolio-item cursor-pointer group" data-category="logo">
+            <img
+              src="assets/logol3.avif"
+              alt="Logo Project 6"
+              class="rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+
+          <!-- Project 3 -->
+          <div class="portfolio-item cursor-pointer group" data-category="app">
+            <img
+              src="assets/app1.avif"
+              alt="App Project 1"
+              class="h-80 rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <!-- Project 3 -->
+          <div class="portfolio-item cursor-pointer group" data-category="app">
+            <img
+              src="assets/app2.avif"
+              alt="App Project 2"
+              class="h-80 rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <!-- Project 3 -->
+          <div class="portfolio-item cursor-pointer group" data-category="app">
+            <img
+              src="assets/app3.avif"
+              alt="App Project 3"
+              class="h-80 rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <!-- Project 3 -->
+          <div class="portfolio-item cursor-pointer group" data-category="app">
+            <img
+              src="assets/app4.webp"
+              alt="App Project 4"
+              class="h-80 rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <!-- Project 3 -->
+          <div class="portfolio-item cursor-pointer group" data-category="app">
+            <img
+              src="assets/app5.avif"
+              alt="App Project 5"
+              class="h-80 rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <!-- Project 3 -->
+          <div class="portfolio-item cursor-pointer group" data-category="app">
+            <img
+              src="assets/app6.avif"
+              alt="App Project 6"
+              class="h-80 rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+
+          <!-- Add more project items here following the same structure -->
         </div>
       </section>
 
-      <!-- ===== Contact Section ===== -->
       <section id="contact" class="my-16 text-center">
         <h2 class="text-3xl font-bold text-center mb-4">Get In Touch</h2>
         <p>I'm currently available for freelance work.</p>
         <a
-          href="mailto:hello@janedoe.com"
+          href="destashewa67@gmail.com"
           class="mt-4 inline-block bg-sky-500 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-sky-600"
-          >Email Me</a
         >
+          Email Me
+        </a>
       </section>
+
+      <footer class="text-center py-4">
+        <p>&copy; 2023 Desta Shewa. All rights reserved.</p>
+      </footer>
     </main>
 
-    <!-- ===== Scroll to Top Button ===== -->
     <button
       id="scroll-to-top-btn"
       class="hidden fixed bottom-5 right-5 bg-sky-500 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-sky-600 focus:outline-none z-50"
@@ -188,7 +314,6 @@
       </svg>
     </button>
 
-    <!-- ===== Image Lightbox/Modal ===== -->
     <div
       id="lightbox"
       class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
@@ -207,7 +332,6 @@
       />
     </div>
 
-    <!-- Link to your JavaScript file -->
     <script src="app.js"></script>
   </body>
 </html>
