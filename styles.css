@@ -1,19 +1,20 @@
 /* Custom styles that complement Tailwind */
+.nav-link {
+  @apply text-slate-600 dark:text-slate-300 hover:text-sky-500 transition-colors;
+}
 
-/* Style for the default state of filter buttons */
 .filter-btn {
   background-color: #ffffff;
   color: #475569;
   transition: all 0.2s ease-in-out;
 }
 .dark .filter-btn {
-  background-color: #334155; /* slate-700 */
-  color: #cbd5e1; /* slate-300 */
+  background-color: #334155;
+  color: #cbd5e1;
 }
 
-/* Style for the currently active filter button */
 .filter-btn.active {
-  background-color: #0ea5e9; /* sky-500 */
+  background-color: #0ea5e9;
   color: #ffffff;
   font-weight: 600;
 }
@@ -22,7 +23,6 @@
   color: #ffffff;
 }
 
-/* Blinking cursor for the typing effect */
 #typing-text::after {
   content: "|";
   animation: blink 1s step-end infinite;
@@ -35,5 +35,5 @@
   }
   50% {
     color: #0ea5e9;
-  } /* sky-500 */
+  }
 }
